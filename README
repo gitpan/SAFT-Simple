@@ -1,0 +1,67 @@
+SAFT-Simple version 1.0.0
+
+This module provides a convenient way to create archival finding aids in a
+format specified by the SAFT XML standard.
+
+If you don't know what a finding aid is in the first place, please refer to
+Wikipedia. SAFT is a standard for XML encoding those finding aids. The acronym
+SAFT stands for German "Standard-Austauschformat" (s.th. like "standard
+interchange format"). You can find the SAFT DTD and more (German)
+documentation on SAFT XML on this website:
+http://www.archivschule.de/forschung/retrokonversion-252/vorstudien-und-saft-xml/
+
+SAFT XML is not very widely used (in fact, since its tag names are German,
+probably nobody uses it outside Germany), a far more widespread format for
+such purposes is the American standard Encoded Archival Description (EAD).
+
+So why bother using SAFT anyway? Three reasons: First, it might be better
+suited to German archival tradition (personal opinion). Second, it might be
+easier to use than EAD (again, personal opinion). Third, I haven't heard of a
+Perl module for EAD so far. For SAFT? Here you go.
+
+SAFT::Simple does not, however, provide every feature the SAFT DTD allows you
+to use (you guess, that's why it's called 'Simple'). Instead methods are
+provided only for common cases and rather simple structures (i.e., cases I
+have stumbled upon and structures I have needed so far using SAFT XML).
+Anything that's allowed by the SAFT DTD but not provided by SAFT::Simple could
+easily be achieved using a general XML module such as XML::LibXML. In fact,
+all that SAFT::Simple does is wrapping XML::LibXML, thus making your life
+easier (well, much easier compared to writing all code based directly on
+XML::LibXML, but whatever).
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+Alternatively, to install with Module::Build, you can use the following commands:
+
+	perl Build.PL
+	./Build
+	./Build test
+	./Build install
+
+
+DEPENDENCIES
+
+SAFT::Simple uses Perl (minimum 5.10) and the following modules and pragmas:
+
+warnings
+strict
+Carp
+utf8
+version
+XML::LibXML (tested with version 1.70)
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (c) 2011, Martin Hoppenheit <martin.hoppenheit@brhf.de>
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
